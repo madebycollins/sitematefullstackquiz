@@ -1,0 +1,95 @@
+// Create the body instance
+let documentBody = document.querySelector('body');
+
+// Create button instance
+let clickMeButton = document.querySelector('button.clickMeButton');
+
+// Create button instance
+let yesButton = document.querySelector('button.yesButton');
+
+// Create button instance
+let cancelButton = document.querySelector('button.cancelButton');
+
+// Create response paragraph instance
+let userResponseOutcome = document.querySelector('p.userResponseOutcome');
+
+// Create question instance
+let modalQuestion = document.querySelector('p.modalQuestion');
+
+// Create modal body instance
+let modalBody = document.querySelector('div.modalBody');
+
+// Add click listener for the clickMe utton
+clickMeButton.addEventListener('click', function () {
+
+    // Reset the response outcome
+    resetResponse();
+
+    // Get the modal question from the button
+    const question = clickMeButton.getAttribute('aria-question');
+
+    // Set the question
+    setModalQuestion(question);
+
+    // Show the modal
+    activateModalMode();
+})
+
+// Add click listener for yesButton button
+yesButton.addEventListener('click', function () {
+    // Get the response value
+    const outcomeValue = yesButton.getAttribute('title');
+
+    // Update the data
+    setResponseOutcome(outcomeValue);
+
+    // Reset the modal mode
+    deactivateModalMode();
+})
+
+// Add click listener for yesButton button
+cancelButton.addEventListener('click', function () {
+    // Get the response value
+    const outcomeValue = cancelButton.getAttribute('title');
+
+    // Update the data
+    setResponseOutcome(outcomeValue);
+
+    // Reset the modal mode
+    deactivateModalMode();
+})
+
+function activateModalMode() {
+    // Darken background
+    documentBody.className = "modalMode";
+
+    // Disable the button
+    clickMeButton.setAttribute('disabled', 'disabled');
+
+    // Make the modal visible
+    modalBody.setAttribute('display', 'block');
+}
+
+function deactivateModalMode() {
+
+    // Make the modal visible
+    modalBody.setAttribute('display', 'block');
+
+    // Lighten the background
+    documentBody.className = "container";
+
+    // Reactivate the button
+    clickMeButton.removeAttribute('disabled');
+}
+
+function resetResponse() {
+    userResponseOutcome.textContent = '';
+}
+
+function setResponseOutcome(newContent) {
+    userResponseOutcome.textContent = 'You just clicked "' + newContent + '"';
+}
+
+function setModalQuestion(question) {
+    modalQuestion.textContent = question;
+}
