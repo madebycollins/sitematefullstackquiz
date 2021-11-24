@@ -5,8 +5,13 @@ div.container {
 div.modalBody {
     /*height: 300px;*/
     /*width: 300px;*/
+    display: none;
     background-color: white!important;
     text-align: center!important;
+}
+
+.modalVisible {
+    display: block!important;
 }
 
 div.modalBody > p {

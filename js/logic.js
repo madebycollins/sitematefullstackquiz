@@ -67,13 +67,13 @@ function activateModalMode() {
     clickMeButton.setAttribute('disabled', 'disabled');
 
     // Make the modal visible
-    modalBody.setAttribute('display', 'block');
+    modalBody.className = "modalBody modalVisible";
 }
 
 function deactivateModalMode() {
 
     // Make the modal visible
-    modalBody.setAttribute('display', 'block');
+    modalBody.className = "modalBody";
 
     // Lighten the background
     documentBody.className = "container";
