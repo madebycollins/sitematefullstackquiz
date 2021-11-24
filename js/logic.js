@@ -64,7 +64,9 @@ function activateModalMode() {
     documentBody.className = "modalMode";
 
     // Disable the button
-    clickMeButton.setAttribute('disabled', 'disabled');
+    document.querySelectorAll('.clickMeButton').forEach(function(button){
+        button.setAttribute('disabled', 'disabled');
+    });
 
     // Make the modal visible
     modalBody.className = "modalBody modalVisible";
@@ -79,7 +81,9 @@ function deactivateModalMode() {
     documentBody.className = "container";
 
     // Reactivate the button
-    clickMeButton.removeAttribute('disabled');
+    document.querySelectorAll('.clickMeButton').forEach(function(button){
+        button.removeAttribute('disabled');
+    });
 }
 
 function resetResponse() {
