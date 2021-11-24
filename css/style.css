@@ -3,8 +3,9 @@ div.container {
 }
 
 div.modalBody {
-    /*height: 300px;*/
-    /*width: 300px;*/
+    padding: 80px;
+    margin-left: 200px;
+    margin-right: 200px;
     display: none;
     background-color: white!important;
     text-align: center!important;
