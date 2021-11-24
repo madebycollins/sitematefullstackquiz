@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Collins Zimba - Fullstack Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="container">
+    <button id="clickMeButton" name="clickMeButton" class="clickMeButton" aria-question="Are you sure you want to continue?" >Click Me</button>
+    <br>
+    <p class="userResponseOutcome">You just clicked "Cancel"</p>
+</div>
 
+<div class="modalBody">
+    <p class="modalQuestion">Modal question will be dynamically replaced</p>
+    <div>
+        <button class="yesButton" title="Yes">Yes</button>
+        <button class="cancelButton" title="Cancel">Cancel</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/logic.js"></script>
 </body>
 </html>
