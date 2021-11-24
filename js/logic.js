@@ -19,21 +19,21 @@ let modalQuestion = document.querySelector('p.modalQuestion');
 // Create modal body instance
 let modalBody = document.querySelector('div.modalBody');
 
-// Add click listener for the clickMe button
-clickMeButton.addEventListener('click', function () {
+// Handle multiple buttons
+function handleButtonClick(event) {
 
     // Reset the response outcome
     resetResponse();
 
     // Get the modal question from the button
-    const question = clickMeButton.getAttribute('aria-question');
+    const question = event.getAttribute('aria-question');
 
     // Set the question
     setModalQuestion(question);
 
     // Show the modal
     activateModalMode();
-})
+}
 
 // Add click listener for yesButton button
 yesButton.addEventListener('click', function () {
