@@ -19,7 +19,7 @@ let modalQuestion = document.querySelector('p.modalQuestion');
 // Create modal body instance
 let modalBody = document.querySelector('div.modalBody');
 
-// Add click listener for the clickMe utton
+// Add click listener for the clickMe button
 clickMeButton.addEventListener('click', function () {
 
     // Reset the response outcome
